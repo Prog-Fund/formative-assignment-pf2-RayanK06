@@ -65,14 +65,20 @@ public class Product {
      * @param productCode The new Product Code
      */
     public void setProductCode(int productCode) {
+        if ((productCode >= 1000) && (productCode <= 5000)) {
             this.productCode = productCode;
+        }
     }
     /**
      * Updates the Product Name to the value passed as a parameter
      * @param productName The new Product Name
      */
     public void setProductName(String productName) {
-            this.productName = productName;
+        if (productName != null){
+            if (productName.length() <= 20) {
+                this.productName = productName;
+            }
+        }
     }
     /**
      *
@@ -84,7 +90,9 @@ public class Product {
      * @param unitCost The new unit cost for the product
      */
     public void setUnitCost(double unitCost) {
+        if ((unitCost > 0) && (unitCost <= 99999)) {
             this.unitCost = unitCost;
+        }
     }
     /**
      * Updates the boolean indicating whether the product is in the current product line or not.
